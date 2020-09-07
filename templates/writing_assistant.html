@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아이엘츠 던지고 싶다.</title>
+</head>
+<body>
+<h1>어서오세요.</h1>
+
+<form method="post" action="{% url 'index' %}">
+    {% csrf_token %}
+    <textarea name="essay"></textarea>
+    <input type="submit" />
+</form>
+
+{% if words_count %}
+    <h3>단어 수: {{ words_count }}</h3>
+{% endif %}
+
+{% if word_list %}
+    <table style="border-style: dashed">
+        {% for row in word_list %}
+            <tr>
+            {% for col in row %}
+                <td>{{ col }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h4>재시도는 새로고침하세요.</h4>
+{% endif %}
+
+</body>
+</html>
