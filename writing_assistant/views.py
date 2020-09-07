@@ -16,6 +16,7 @@ class MainView(View):
 
         words_count = len(formatted_essay)
         word_list = splited_list
+
         print(word_list)
         return render(request,
                       'writing_assistant.html',

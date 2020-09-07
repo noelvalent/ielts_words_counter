@@ -15,8 +15,10 @@ def ten_column_spliter(lst):
         if len(temp) == 10:
             wrapper.append(temp.copy())
             temp.clear()
-
-    return wrapper
+    if any(wrapper):
+        return wrapper
+    else:
+        return temp
 
 
 def str_formatter(s: str):
